@@ -1,13 +1,6 @@
- 														DevOps Project
-
  								**Deployment of Microservices Application using Ingress Controller**
-
- 														   *by*
-
-=================== 										 			
-=================== 										 			
-Step 1: Basic Setup
-===================
+			 			
+===== Step 1: Basic Setup ======
 1.1. Push the code from Local to Remote
 Use a Personal Access Token (HTTPS method)
 🔧 Step-by-Step:
@@ -53,9 +46,7 @@ Secure Mail Transfer Protocol over SSL/TLS. Used for sending emails securely via
 Custom TCP         TCP           30000-32767
 Kubernetes NodePort service range.
 
-===================
-Step 2: Tools Installation
-===================
+===== Step 2: Tools Installation ========
 2.1.1 Connect to the Ingress Server
 vi Jenkins.sh ----> Paste the below content ---->
 
@@ -111,9 +102,7 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 
 docker --version
 
-==================================
-Step 3: Access Jenkins Dashboard
-==================================
+====== Step 3: Access Jenkins Dashboard ======
 Setup the Jenkins
 
 3.1. Plugins installation
@@ -126,9 +115,7 @@ Configure AWS Credentials (Access and Secret Access Keys) as "aws-creds"
 
 3.3. Tools Configuration
 
-=====================================
-Step 4: Creation of EKS Cluster
-=====================================
+===== Step 4: Creation of EKS Cluster =======
 4.1. Creation of IAM user (To create EKS Cluster, its not recommended to create using Root Account)
 
 4.2. Attach policies to the user
@@ -193,14 +180,10 @@ kubectl get svc ingress-nginx-controller -n ingress-nginx
 4.10. To delete the cluster (Optional)
 eksctl delete cluster --name kastro-cluster --region us-east-1
 
-================================
-Step 5: Creation of Jenkins Job
-================================
+===== Step 5: Creation of Jenkins Job ======
 The pipeline script can be found in the Jenkinsfile in GitHub repo
 
-=========================
-Step 6: Monitoring
-=========================
+====== Step 6: Monitoring ========
 Launch Ubuntu VM, 22.04, t2.medium,
 Name the VM as Monitoring Server
 
