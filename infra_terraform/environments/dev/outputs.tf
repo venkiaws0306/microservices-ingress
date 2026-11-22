@@ -1,0 +1,10 @@
+output "vpc_id" { value = module.vpc.vpc_id }
+output "jenkins_public_ip" { value = module.jenkins.public_ip }
+output "jenkins_url" { value = "http://${module.jenkins.public_ip}:8080" }
+output "monitoring_public_ip" { value = module.monitoring.public_ip }
+output "grafana_url" { value = "http://${module.monitoring.public_ip}:3000" }
+output "prometheus_url" { value = "http://${module.monitoring.public_ip}:9090" }
+output "eks_cluster_name" { value = module.eks.cluster_name }
+output "eks_cluster_endpoint" { value = module.eks.cluster_endpoint }
+output "ingress_nginx_service" { value = "kubectl get svc -n ingress-nginx" }
+output "argocd_service" { value = "kubectl get svc -n argocd" }
